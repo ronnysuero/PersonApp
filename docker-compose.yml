@@ -1,0 +1,50 @@
+﻿services:
+  api:
+    build:
+      context: .
+      dockerfile: PersonApi/Dockerfile
+    image: personapi-image:1.0.0
+    container_name: personapi-container
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Release
+    depends_on:
+      - db
+    networks:
+      - network
+
+  angular:
+    build:
+      context: ./PersonApi.UI
+      dockerfile: Dockerfile
+    image: personui-image:1.0.0
+    container_name: personui-container
+    ports:
+      - "4200:80"
+    depends_on:
+      - api
+    networks:
+      - network
+
+  db:
+    image: mysql:8.0
+    container_name: persondb-container
+    environment:
+      MYSQL_ROOT_PASSWORD: rootPassword
+      MYSQL_DATABASE: persondb
+      MYSQL_USER: demoUser
+      MYSQL_PASSWORD: demoPassword
+    ports:
+      - "3307:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - network
+
+volumes:
+  db_data:
+
+networks:
+  network:
+    driver: bridge

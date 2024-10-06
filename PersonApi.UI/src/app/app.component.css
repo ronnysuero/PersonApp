@@ -1,0 +1,32 @@
+/* src/app/app.component.css */
+nav {
+  background-color: #343a40;
+  padding: 1rem;
+  border-bottom: 1px solid #e7e7e7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  margin-right: 1rem;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a.active {
+  color: #ffc107;
+}
+
+nav a:hover {
+  color: #adb5bd;
+}
+
+router-outlet {
+  display: block;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}

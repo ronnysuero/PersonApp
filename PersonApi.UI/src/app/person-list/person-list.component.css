@@ -1,0 +1,54 @@
+/* src/app/person-list/person-list.component.css */
+h2 {
+  color: #333;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+ul {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0;
+  list-style-type: none;
+  background-color: #f9f9f9;
+  border: 1px solid #e7e7e7;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li {
+  padding: 1rem;
+  border-bottom: 1px solid #e7e7e7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+a {
+  text-decoration: none;
+  color: #007bff;
+  margin-right: 1rem;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #c82333;
+}

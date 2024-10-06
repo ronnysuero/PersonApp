@@ -1,0 +1,12 @@
+<h2>Edit Person</h2>
+<form (ngSubmit)="updatePerson()">
+  <label>First Name:</label>
+  <input [(ngModel)]="person.firstName" name="firstName" required>
+  <label>Last Name:</label>
+  <input [(ngModel)]="person.lastName" name="lastName" required>
+  <label>Date of Birth:</label>
+  <input [(ngModel)]="person.dateOfBirth" name="dateOfBirth" type="date" required>
+  <label>Email:</label>
+  <input [(ngModel)]="person.email" name="email" type="email" required>
+  <button type="submit">Update</button>
+</form>
